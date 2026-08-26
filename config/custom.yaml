@@ -10,7 +10,7 @@ zotero:
 email:
   sender: ${oc.env:SENDER}
   receiver: ${oc.env:RECEIVER}
-  smtp_server: smtp.qq.com
+  smtp_server: smtp.163.com
   smtp_port: 465
   sender_password: ${oc.env:SENDER_PASSWORD}
 
@@ -20,7 +20,7 @@ llm:
     base_url: ${oc.env:OPENAI_API_BASE}
   api_mode: chat_completion
   generation_kwargs:
-    model: gpt-4o-mini
+    model: Qwen/Qwen3.6-35B-A3B
 
 source:
   arxiv:
