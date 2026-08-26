@@ -1,7 +1,11 @@
 zotero:
   user_id: ${oc.env:ZOTERO_ID}
   api_key: ${oc.env:ZOTERO_KEY}
-  include_path: null # Or set a list of glob patterns, e.g. ["2026/survey/**","2026/reading-group/**"]
+  include_path:
+    - "世界模型-土的本构"
+    - "世界模型-土的本构/**"
+    - "土的本构学习论文"
+    - "土的本构学习论文/**"
 
 email:
   sender: ${oc.env:SENDER}
@@ -20,8 +24,10 @@ llm:
 
 source:
   arxiv:
-    category: ["cs.AI","cs.CV","cs.LG","cs.CL"]
+    category: ["cs.AI", "cs.LG", "cs.RO", "cs.CE", "stat.ML", "eess.SY", "cond-mat.soft", "physics.geo-ph"]
+    include_cross_list: true
 
 executor:
   debug: ${oc.env:DEBUG,null}
   source: ['arxiv']
+  max_paper_num: 15
